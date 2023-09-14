@@ -43,16 +43,17 @@
         var valorColheita = Number(input_kg.value)
         var qtdMetros = Number(input_metros.value)
         var qtdDePlantasPorMetros = qtdMetros * 1.5
-        var qtdDeFolhas = qtdDePlantasPorMetros * 20
+        var qtdDeFolhas = qtdDePlantasPorMetros * 22
         var qtsDeKilo = qtdDeFolhas * 0.012
         var lucro = qtsDeKilo * valorColheita
         var perdas = input_perdas.value / 100
         var perdasValor  = lucro * perdas
         var lucroComPerda = lucro - perdasValor
+        var comNossosSensores = perdas / 2
         mensagem.innerHTML = `Você durante uma colheia você tem mais ou menos <strong> ${qtdDeFolhas} folhas colhidas</strong> . <br> <br>
             Sendo <strong> ${qtsDeKilo}KG de folhas de tabacos </strong> <br><br>
             Como a sua perda é de <strong> ${input_perdas.value}%,</strong> então seu lucro por colheita sera mais ou menos <strong> R$${lucroComPerda} </strong>, sem contar os gastos com mão de obra e maquinas.
-            <br><br> Com a utilização dos nossos sensores esse número poderia aumentar em <strong> 25%</strong>, passando seu lucro para <strong> ${lucroComPerda * 1.25}</strong>.
+            <br><br> Com a utilização dos nossos sensores esse número poderiamos diminuir suas perdas <strong> pela metade</strong>, passando seu lucro para <strong> ${lucroComPerda * (1 + comNossosSensores)}</strong>.
         `
     }
 </script>
